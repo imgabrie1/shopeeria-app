@@ -3,14 +3,13 @@ import { useEffect } from "react";
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
 import api from "@/services/api";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import {
   iContextUserProps,
   iDataRegister,
   iProducts,
   iUserContext,
 } from "./interface";
-import { cookies } from "next/headers";
 import { deleteCookie } from "cookies-next";
 
 export const UserContext = createContext({} as iUserContext);
@@ -28,17 +27,15 @@ export const UserProvider = ({ children }: iContextUserProps) => {
   const router = useRouter();
 
   const getProducts = async () => {
-    const token = (await cookies()).get("shopeeria.token")?.value
+    // const token = getCookie("shopeeria.token");
 
-    if (!token) {
-      setLoading(false);
-      return;
-    }
+    // if (!token) {
+    //   setLoading(false);
+    //   return;
+    // }
 
     try {
-      const { data } = await api.get<iProducts[]>("/products", {
-        headers: { authorization: `Bearer ${token}` },
-      });
+      const { data } = await api.get<iProducts[]>("/product");
 
       setProducts(data);
     } catch (err) {

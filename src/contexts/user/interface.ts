@@ -3,11 +3,16 @@ export interface iContextUserProps {
 }
 
 export interface iProducts {
-  id: number;
-  name: string;
-  category: string;
+  productName: string;
+  description: string;
+  category: string[];
+  img:string;
+  link: string;
   price: number;
-  img: string;
+  id: number;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+  deletedAt: Date | string | null;
 }
 
 export interface iDataRegister {
