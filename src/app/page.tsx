@@ -5,7 +5,7 @@ import { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <main className="background-color: red;">
+    <main className="container mx-auto background">
       <div>
         <h1>dashboard</h1>
         <ProductsList />
