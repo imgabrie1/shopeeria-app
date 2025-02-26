@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         setUser({ name: "Usuário" });
       }
 
-      router.push("/profile");
+      router.push("/dashboard");
     } catch (err) {
       console.log(err);
     } finally {

@@ -27,12 +27,7 @@ export const UserProvider = ({ children }: iContextUserProps) => {
   const router = useRouter();
 
   const getProducts = async () => {
-    // const token = getCookie("shopeeria.token");
-
-    // if (!token) {
-    //   setLoading(false);
-    //   return;
-    // }
+    setLoading(true);
 
     try {
       const { data } = await api.get<iProducts[]>("/product");
@@ -62,6 +57,7 @@ export const UserProvider = ({ children }: iContextUserProps) => {
       await api.post("/users", data);
 
       toast.success("Cadastro efetuado com sucesso");
+      console.log(data);
 
       router.push("/");
     } catch (err) {
