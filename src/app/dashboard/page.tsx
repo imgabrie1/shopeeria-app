@@ -1,15 +1,11 @@
-// Ajuste o arquivo src/pages/dashboard.tsx
-
-import { ProductsList } from "@/components/ProductList";
+"use client "
 import { NextPage } from "next";
+import Home from "../page";
 
 const Dashboard: NextPage = async () => {
   return (
     <main>
-      <div>
-        <h1>dashboard</h1>
-        <ProductsList />
-      </div>
+      <Home/>
     </main>
   );
 };

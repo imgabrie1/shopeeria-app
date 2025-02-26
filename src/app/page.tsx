@@ -1,14 +1,17 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import { ProductsList } from "@/components/ProductList";
+import { NextPage } from "next";
 
-export default function Home() {
-  const router = useRouter()
+const Home: NextPage = () => {
   return (
-    <div>
-      <button type="button" onClick={() => router.push("/login")}>
-        login
-      </button>
-    </div>
+    <main className="background-color: red;">
+      <div>
+        <h1>dashboard</h1>
+        <ProductsList />
+      </div>
+    </main>
   );
-}
+};
+
+export default Home;
